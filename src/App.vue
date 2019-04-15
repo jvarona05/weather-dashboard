@@ -231,7 +231,7 @@ export default {
    locationEntered: function() {
      var input = this.$refs.input;
      if (input.value === '') {
-       this.location = "New York";
+       this.location = "Madrid";
      } else {
        this.location = this.convertToTitleCase(input.value);
      }
@@ -266,6 +266,7 @@ export default {
    // Some basic asynchronous functions
    setFormatCoordinates: async function() {
      var coordinates = await this.getCoordinates();
+     console.log(coordinates)
      this.lat = coordinates.lat;
      this.long = coordinates.long;
      this.currentWeather.full_location = coordinates.full_location;
@@ -477,7 +478,7 @@ export default {
    },
  },
  mounted: async function() {
-   this.location = "New York";
+   this.location = "Madrid";
    await this.organizeAllDetails();    
  }
 };
